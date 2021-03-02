@@ -8,34 +8,35 @@ public class Main {
         // On déclare un scanner pour lire les entrées de la console
         Scanner sc = new Scanner(System.in);
 
-        // Combien d'articles sont à enregistrer
-        System.out.println("Nombres d'articles");
-        int articles = sc.nextInt();
+        // On demande le plat
+        System.out.println("Entrez plat : ");
+
+        // On récupère le plat
+        String p1 = sc.nextLine();
+
+        // On demande la quantité
+        System.out.println("Entrez la quantité : ");
+        int q1 = sc.nextInt();
         sc.nextLine();
 
-        //Boucle
-        for (int totalarticles=0; articles<totalarticles; totalarticles++);
+        // On inscrit le prix
+        System.out.println("Entrez le prix");
+        float px1 = sc.nextFloat();
+        sc.nextLine();
 
-        { // On demande le plat
-            System.out.println("Entrez plat : ");
+        // On demande s'il y a un autre plat
+        System.out.println("Commande suivante :");
 
-            // On récupère le plat
-            String plat = sc.nextLine();
+        //On récupère le plat2
+        String p2 = sc.nextLine();
 
-            // On demande la quantité
-            System.out.println("Entrez la quantité : ");
-            int quantité = sc.nextInt();
-            sc.nextLine();
-
-            // On inscrit le prix
-            System.out.println("Entrez le prix");
-            float prix = sc.nextFloat();
-            sc.nextLine();
-
-            // On calcule la somme
-            float product = quantité * prix;
+        if (p2="") {
+            //On affiche l'addition
+            System.out.println(q1 + " x " + p1 + " " + px1 + "euros");
+        } else {
+            //A développer, en attendant mettre fin
+            System.out.println("A suivre");
         }
-        System.out.println("Total de votre commande = " + product + " euros");
 
         // On ferme le scanner
         sc.close();
