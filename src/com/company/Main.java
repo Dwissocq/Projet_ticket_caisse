@@ -1,5 +1,9 @@
 package com.company;
 
+import java.sql.SQLOutput;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +14,11 @@ public class Main {
 
         //Définir les variables
         float prixtotal=0;
-        String listeCommande="";
+        String liste="";
+
+        ArrayList totalplat = new ArrayList();
+        ArrayList totalquantite = new ArrayList();
+        ArrayList totalprix = new ArrayList();
 
         // Boucle while tant qu'il y a un autre plat
         int index = 1;
@@ -21,21 +29,24 @@ public class Main {
 
             // On récupère le plat
             String p1 = sc.nextLine();
+            totalplat.add (p1);
 
             // On demande la quantité
             System.out.println("Entrez la quantité : ");
             int q1 = sc.nextInt();
             sc.nextLine();
+            totalquantite.add (q1);
 
             // On inscrit le prix
             System.out.println("Entrez le prix");
             float px1 = sc.nextFloat();
             sc.nextLine();
+            totalprix.add (px1);
 
             //On calcule le prix total
             prixtotal =prixtotal + (q1 * px1);
 
-            listeCommande= q1+" x "+p1+" ( "+px1+ "€) "+q1*px1+"€\n"+ listeCommande;
+            liste= q1+" x "+p1+" ( "+px1+ "€) "+q1*px1+"€\n"+ liste;
 
             // On demande s'il y a un autre plat
             System.out.println("Y a t il une autre commande ? Oui = 1 / Non = 0");
@@ -47,8 +58,8 @@ public class Main {
         }
 
         System.out.println("----------------FACTURE----------------");
-        System.out.println(listeCommande);
-        System.out.println("Prix total de "+prixtotal+"€");
+        System.out.println(liste);
+        System.out.printf("Prix total : %24s €\n", prixtotal);
         System.out.println("-------------BONNE JOURNEE-------------");
 
         // On ferme le scanner
